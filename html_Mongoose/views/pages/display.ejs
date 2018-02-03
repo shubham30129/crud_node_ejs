@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partial/head %>
+</head>
+<body class="cbp-spmenu-push">
+<div class="main-content">
+    <!-- left-sidebar-->
+    <% include ../partial/left-sidebar %>
+    <!-- left-sidebar End-->
+
+    <!-- header-->
+    <% include ../partial/header %>
+    <!-- header End-->
+    <!-- Main Content-->
+    <!-- main content start-->
+    <div id="page-wrapper" style="min-height: 404px;">
+        <div class="main-page">
+            <div class="tables">
+                <div class="bs-example widget-shadow" data-example-id="contextual-table">
+                    <h4>Employee Data:</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Salary</th>
+                                <th>Email</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i<data.length; i++) {%>
+
+                                <tr class="active">
+
+                                    <td><%= data[i].name %>  </td>
+                                    <td><%= data[i].salary %></td>
+                                    <td><%= data[i].email %></td>
+                                    <td>
+                                        <div class="mail-right">
+                                            <div class="dropdown">
+                                                <a href="#" data-toggle="dropdown" aria-expanded="false">
+                                                    <p><i class="fa fa-ellipsis-v mail-icon"></i></p>
+                                                </a>
+                                                <ul class="dropdown-menu float-left">
+                                                    <li>
+                                                        <a  href="/edit" >
+                                                            <i class="fa fa-reply mail-icon"></i>
+                                                            Edit
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+
+                                                        <a href="/delete?did=<%= data[i]._id %>" class="font-red" title="">
+                                                            <i class="fa fa-trash-o mail-icon"></i>
+                                                            Delete
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                            <% } %>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+    <!-- Main Content End-->
+    <!-- footer-->
+    <% include ../partial/footer %>
+    <!-- footer End-->
+</div>
+<!-- Foot -->
+<% include ../partial/foot %>
+<!-- Foot End -->
+
+
+</bod|y>
+
+
+</body>
+</html>
